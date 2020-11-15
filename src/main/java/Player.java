@@ -13,9 +13,6 @@ public class Player {
     }
 
     public String getName() {
-        System.out.println("Please enter your name ");
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.toString();
         return name;
     }
 
@@ -31,10 +28,25 @@ public class Player {
         this.hand.add(card);
     }
 
+    public int getNumberOfCardsInHand(){
+        return this.hand.size();
+    }
+
     public void showCardsInHand() {
         for (Card eachCard : hand) {
-            System.out.println(eachCard.getRank().getValue() + " of " + eachCard.getSuit());
+            System.out.println(eachCard.getRank() + " of " + eachCard.getSuit());
         }
+    }
+
+    public int getTotalHandValue(){
+        int total = 0;
+        for(Card card : this.hand) {
+            total += card.getRank().getValue();
+        }
+        if( total > 21){
+            total -= 10;
+            }
+        return total;
     }
 
 

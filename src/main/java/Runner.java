@@ -16,11 +16,18 @@ public class Runner {
         System.out.println("Player 1 holds ....");
         player1.showCardsInHand();
         game.twistOrStick(player1);
+
         System.out.println("Player 2 holds...");
         player2.showCardsInHand();
         game.twistOrStick(player2);
 
-        game.calculateTotals();
+        System.out.println("The dealer will now play...");
+        System.out.println("The dealer holds...");
+
+        dealer.showCardsInHand();
+        game.twistOrStick(dealer);
+
+        game.calculateTheWinner();
 
 
 

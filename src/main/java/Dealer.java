@@ -28,6 +28,24 @@ public class Dealer {
         System.out.println("The Dealer has " + firstCard.getRank().getValue() + " of " + firstCard.getSuit());
     }
 
+    public void showCardsInHand() {
+        for (Card eachCard : hand) {
+            System.out.println(eachCard.getRank() + " of " + eachCard.getSuit());
+        }
+    }
 
+    public int getTotalHandValue(){
+        int total = 0;
+        for(Card card : this.hand){
+            total += card.getRank().getValue();
+            if( total > 21){
+                total -= 10;
+            }
+        }
+        return total;
+    }
 
+    public int getNumOfCardsInHand() {
+        return this.hand.size();
+    }
 }

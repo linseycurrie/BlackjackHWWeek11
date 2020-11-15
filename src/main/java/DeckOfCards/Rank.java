@@ -25,4 +25,10 @@ public enum Rank {
         return this.value;
     }
 
+//    public Boolean hasValueOfTen(Card card){
+//        if(card.equals(Rank.JACK) | card.equals((Rank.QUEEN) | card.equals(Rank.KING) | card.equals(Rank.TEN))){
+//            return true;
+//        }
+//    }
+
 }
